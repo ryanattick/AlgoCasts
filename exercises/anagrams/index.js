@@ -8,6 +8,34 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+
+function anagrams(stringA, stringB) {
+  // let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  // function convertToObj(string) {
+  //   let obj = {};
+  //   string = string.split('').sort().join('').toLowerCase(); //this actually is the solution, no need to map to an object
+  //   for (let char of string) {
+  //     if (alphabet.includes(char)) {
+  //       obj[char] = obj[char] + 1 || 1;
+  //     }
+  //   }
+  //   return obj;
+  // }
+  // let strA = convertToObj(stringA);
+  // let strB = convertToObj(stringB);
+  // return JSON.stringify(strA) === JSON.stringify(strB);
+
+  return stringA.replace(/[^\w]/g, '')
+      .split('')
+      .sort()
+      .join('')
+      .toLowerCase()
+      ===
+      stringB.replace(/[^\w]/g, '')
+      .split('')
+      .sort()
+      .join('')
+      .toLowerCase();
+}
 
 module.exports = anagrams;
